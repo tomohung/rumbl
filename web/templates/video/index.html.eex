@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-<%= for video <- @vidoes do %>
+<%= for video <- @videos do %>
     <tr>
       <td><%= video.user_id %></td>
       <td><%= video.url %></td>
