@@ -10,7 +10,7 @@ let Player = {
     document.head.appendChild(youtubeScriptTag)
   },
   onIframeReady(domId, playerId, onReady){
-    this.palyer = new YT.Player(domId, {
+    this.player = new YT.Player(domId, {
       height: "360",
       width: "420",
       videoId: playerId,
