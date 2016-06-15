@@ -11,7 +11,7 @@ defmodule Rumbl.VideoChannel do
     {:noreply, assign(socket, :count, count + 1)}
   end
 
-  def handel_in(event, params, socket) do
+  def handle_in(event, params, socket) do
     user = Repo.get(Rumbl.User, socket.assigns.user_id)
     handle_in(event, params, user, socket)
   end
