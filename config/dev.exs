@@ -32,11 +32,6 @@ config :logger, :console, format: "[$level] $message\n"
 # and calculating stacktraces is usually expensive.
 config :phoenix, :stacktrace_depth, 20
 
-# Configure your database
-config :rumbl, Rumbl.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "tomohung",
-  password: "",
-  database: "rumbl_dev",
-  hostname: "localhost",
-  pool_size: 10
+
+import_config "dev.secret.exs"
+
