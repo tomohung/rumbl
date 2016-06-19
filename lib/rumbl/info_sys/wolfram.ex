@@ -9,7 +9,7 @@ defmodule Rumbl.InfoSys.Wolfram do
   def fetch(query_str, query_ref, owner, _limit) do
     query_str
     |> fetch_xml()
-    |> xpath(~x"/qeuryresult/pod[contains(@title, 'Result') or
+    |> xpath(~x"/queryresult/pod[contains(@title, 'Result') or
                                  contains(@title, 'Definitions')]
                             /subpod/plaintext/text()")
     |> send_results(query_ref, owner)
@@ -31,5 +31,5 @@ defmodule Rumbl.InfoSys.Wolfram do
     body
   end
 
-  defp app_id, do: Application.get_env(:rumbl, :wolframe)[:app_id]
+  defp app_id, do: Application.get_env(:rumbl, :wolfram)[:app_id]
 end

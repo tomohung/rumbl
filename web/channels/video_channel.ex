@@ -1,5 +1,6 @@
 defmodule Rumbl.VideoChannel do
   use Rumbl.Web, :channel
+  alias Rumbl.AnnotationView
 
   def join("videos:" <> video_id, params, socket) do
     last_seen_id = params["last_seen_id"] || 0
@@ -14,7 +15,7 @@ defmodule Rumbl.VideoChannel do
       preload: [:user]
     )
 
-    resp = %{annotations: Phoenix.View.render_many(annotations, Rumbl.AnnotationView, "annotation.json")}
+    resp = %{annotations: Phoenix.View.render_many(annotations, AnnotationView, "annotation.json")}
     {:ok, assign(socket, :video_id, video_id)}
   end
 
